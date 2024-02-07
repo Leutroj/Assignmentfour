@@ -1,10 +1,9 @@
-﻿namespace Assignmentfour
+﻿using Assignmentfour.Contexts;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+var builder = Host.CreateDefaultBuilder().ConfigureServices(services =>
 {
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
-    }
-}
+    services.AddDbContext<DataContext>(x => x.UseSqlServer(@""));
+}).Build();
