@@ -5,5 +5,9 @@ using Microsoft.Extensions.Hosting;
 
 var builder = Host.CreateDefaultBuilder().ConfigureServices(services =>
 {
-    services.AddDbContext<DataContext>(x => x.UseSqlServer(@""));
+
+
+    services.AddDbContext<DataContext>(x => x.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Projects\Assignmentfour\Assignmentfour\Data\database.mdf;Integrated Security=True;Connect Timeout=30"));
+
+
 }).Build();
