@@ -30,7 +30,7 @@ namespace Assignmentfour.Services
         public CategoryEntity GetCategoryByCategoryName(string categoryName) 
         {
             var categoryEntity = _categoryRepository.Get(x => x.CategoryName == categoryName);
-            return CategoryEntity;
+            return categoryEntity;
         }
 
         public CategoryEntity GetCategoryById(int id)
