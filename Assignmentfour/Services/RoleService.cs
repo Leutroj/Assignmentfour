@@ -20,22 +20,22 @@ namespace Assignmentfour.Services
 
         public RoleEntity CreateRole(string roleName)
         {
-            var RoleEntity = _roleRepository.Get(x => x.RoleName == roleName);
-            RoleEntity ??= _roleRepository.Create(new RoleEntity { RoleName = roleName });
+            var roleEntity = _roleRepository.Get(x => x.RoleName == roleName);
+            roleEntity ??= _roleRepository.Create(new RoleEntity { RoleName = roleName });
 
-            return RoleEntity;
+            return roleEntity;
         }
 
         public RoleEntity GetRoleByRoleName(string roleName)
         {
-            var RoleEntity = _roleRepository.Get(x => x.RoleName == roleName);
-            return RoleEntity;
+            var roleEntity = _roleRepository.Get(x => x.RoleName == roleName);
+            return roleEntity;
         }
 
         public RoleEntity GetRoleById(int id)
         {
-            var RoleEntity = _roleRepository.Get(x => x.Id == id);
-            return RoleEntity;
+            var roleEntity = _roleRepository.Get(x => x.Id == id);
+            return roleEntity;
         }
 
         public IEnumerable<RoleEntity> GetRoles()
@@ -44,9 +44,9 @@ namespace Assignmentfour.Services
             return roles;
         }
 
-        public RoleEntity UpdateRole(RoleEntity RoleEntity)
+        public RoleEntity UpdateRole(RoleEntity roleEntity)
         {
-            var updatedRoleEntity = _roleRepository.Update(x => x.Id == RoleEntity.Id, RoleEntity);
+            var updatedRoleEntity = _roleRepository.Update(x => x.Id == roleEntity.Id, roleEntity);
             return updatedRoleEntity;
         }
 
