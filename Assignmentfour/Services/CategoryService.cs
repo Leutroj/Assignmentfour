@@ -27,6 +27,12 @@ namespace Assignmentfour.Services
             return categoryEntity;
         }
 
+        public CategoryEntity GetCategoryByCategoryName(string categoryName) 
+        {
+            var categoryEntity = _categoryRepository.Get(x => x.CategoryName == categoryName);
+            return CategoryEntity;
+        }
+
         public CategoryEntity GetCategoryById(int id)
         {
             var categoryEntity = _categoryRepository.Get(x => x.Id == id);
