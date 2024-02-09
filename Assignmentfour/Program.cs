@@ -33,3 +33,8 @@ var consoleUI = builder.Services.GetRequiredService<ConsoleUI>();
 
 //consoleUI.CreateProduct_UI();
 //consoleUI.GetProducts_UI();
+//consoleUI.UpdateProduct_UI();
+//consoleUI.DeleteProduct_UI();
+
+//consoleUI.CreateCustomer_UI();
+//consoleUI.GetCustomers_UI();
