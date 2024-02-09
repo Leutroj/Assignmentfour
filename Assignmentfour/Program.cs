@@ -38,4 +38,5 @@ var consoleUI = builder.Services.GetRequiredService<ConsoleUI>();
 
 //consoleUI.CreateCustomer_UI();
 //consoleUI.GetCustomers_UI();
-consoleUI.UpdateCustomer_UI();
+//consoleUI.UpdateCustomer_UI();
+//consoleUI.DeleteCustomer_UI();

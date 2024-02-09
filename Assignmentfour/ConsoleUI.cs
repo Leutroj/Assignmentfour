@@ -167,4 +167,23 @@ internal class ConsoleUI
 
         Console.ReadKey();
     }
+    public void DeleteCustomer_UI()
+    {
+        Console.Clear();
+        Console.Write("Enter Customer Email: ");
+        var email = Console.ReadLine()!;
+
+        var customer = _customerService.GetCustomerByEmail(email);
+        if (customer != null)
+        {
+            _customerService.DeleteCustomer(customer.Id);
+            Console.WriteLine("Customer was deleted");
+        }
+        else
+        {
+            Console.WriteLine("No Customer Was found.");
+        }
+
+        Console.ReadKey();
+    }
 }
