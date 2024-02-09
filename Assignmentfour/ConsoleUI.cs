@@ -126,7 +126,6 @@ internal class ConsoleUI
             Console.ReadKey();
         }
     }
-
     public void GetCustomers_UI()
     {
         Console.Clear();
@@ -136,6 +135,36 @@ internal class ConsoleUI
             Console.WriteLine($"{customer.FirstName} {customer.LastName} ({customer.Role.RoleName}) ");
             Console.WriteLine($"{customer.Address.StreetName}, {customer.Address.PostalCode} {customer.Address.City}");
         }
+        Console.ReadKey();
+    }
+    public void UpdateCustomer_UI()
+    {
+        Console.Clear();
+        Console.Write("Enter Customer Email: ");
+        var email = Console.ReadLine();
+
+        var customer = _customerService.GetCustomerByEmail(email);
+        if (customer != null)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"{customer.FirstName} {customer.LastName} ({customer.Role.RoleName}) ");
+            Console.WriteLine($"{customer.Address.StreetName}, {customer.Address.PostalCode} {customer.Address.City}");
+            Console.WriteLine();
+
+            Console.Write("New Last Name: ");
+            customer.LastName = Console.ReadLine()!;
+
+            var newCustomer = _customerService.UpdateCustomer(customer);
+            Console.WriteLine();
+            Console.WriteLine($"{newCustomer.FirstName} {newCustomer.LastName} ({newCustomer.Role.RoleName}) ");
+            Console.WriteLine($"{newCustomer.Address.StreetName}, {newCustomer.Address.PostalCode} {newCustomer.Address.City}");
+            Console.WriteLine();
+        }
+        else
+        {
+            Console.WriteLine("No Customer found.");
+        }
+
         Console.ReadKey();
     }
 }
