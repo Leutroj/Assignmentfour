@@ -1,4 +1,5 @@
-﻿using Assignmentfour.Contexts;
+﻿using Assignmentfour;
+using Assignmentfour.Contexts;
 using Assignmentfour.Repositories;
 using Assignmentfour.Services;
 using Microsoft.EntityFrameworkCore;
@@ -23,4 +24,12 @@ var builder = Host.CreateDefaultBuilder().ConfigureServices(services =>
     services.AddScoped<ProductService>();
     services.AddScoped<CustomerService>();
 
+    services.AddSingleton<ConsoleUI>();
+
 }).Build();
+
+
+var consoleUI = builder.Services.GetRequiredService<ConsoleUI>();
+
+//consoleUI.CreateProduct_UI();
+//consoleUI.GetProducts_UI();
